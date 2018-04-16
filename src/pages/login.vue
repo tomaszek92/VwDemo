@@ -1,14 +1,26 @@
 <template>
-    <f7-page login-screen>
+    <f7-page login-screen @page:beforein="beforein">
       <f7-navbar title="Logowanie"></f7-navbar>
       <f7-list form>
         <f7-list-item>
           <f7-label>Nr personalny</f7-label>
-          <f7-input :value="loginCredentials.username" @input="loginCredentials.username = $event.target.value" name="username" placeholder="Nr personalny" type="text"></f7-input>
+          <f7-input :value="loginCredentials.username"
+                    @input="loginCredentials.username = $event.target.value"
+                    name="username"
+                    placeholder="Nr personalny"
+                    type="text"
+                    required validate
+                    clear-button></f7-input>
         </f7-list-item>
         <f7-list-item>
           <f7-label>Hasło</f7-label>
-          <f7-input :value="loginCredentials.password" @input="loginCredentials.password = $event.target.value"  name="password" type="password" placeholder="Hasło"></f7-input>
+          <f7-input :value="loginCredentials.password"
+                    @input="loginCredentials.password = $event.target.value"
+                    name="password"
+                    type="password"
+                    placeholder="Hasło"
+                    required validate
+                    clear-button></f7-input>
         </f7-list-item>
       </f7-list>
       <transition name="bounce">
@@ -39,6 +51,10 @@ export default {
   },
 
   methods: {
+    beforein() {
+      this.loginCredentials.username = '';
+      this.loginCredentials.password = '';
+    },
     login: function() {
       if (
         this.loginCredentials.username === "123" &&
