@@ -4,7 +4,7 @@
       <f7-nav-title>{{ pageTitle }}</f7-nav-title>
       <f7-nav-right><span class="login">{{ username }}</span></f7-nav-right>
     </f7-navbar>
-    <f7-row no-gap>
+    <f7-row no-gap class="average-results">
       <f7-col>
         <f7-card>
           <f7-card-header class="display-flex justify-content-center">Ø 10 motorów</f7-card-header>
@@ -31,9 +31,9 @@
       </f7-col>
     </f7-row>
     <f7-card>
-      <f7-card-header>ZP4 Montage Taktzeiten <small>(Aktueller Stand)</small></f7-card-header>
+      <f7-card-header><span>ZP4 Montage Taktzeiten <small>(Aktueller Stand)</small></span></f7-card-header>
       <f7-card-content>
-        <img src="static/images/tact_char.PNG" />
+        <img src="static/images/tact_chart.PNG" style="width: 100%;"/>
       </f7-card-content>
     </f7-card>
   </f7-page>
@@ -49,17 +49,16 @@ export default {
   mounted() {
     this.username = this.$f7.data.user;
     this.pageTitle = transformIdToPageTitle(this.$f7route.params['id']);
-    console.log(this.$f7route.params['id']);
   }
 };
 
-function transformIdToPageTitle(id) {
-  const pageTitle = `${id.substring(0, 2)} ${id.substring(2)}`;
-  return pageTitle.toUpperCase();
+  function transformIdToPageTitle(id) {
+    const pageTitle = `${id.substring(0, 2)} ${id.substring(2)}`;
+    return pageTitle.toUpperCase();
 }
 </script>
 <style>
-.card-header {
+.average-results .card-header {
   font-size: 12px !important;
   padding: 5px;
 }

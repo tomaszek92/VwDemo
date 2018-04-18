@@ -42,11 +42,8 @@
       </f7-list-item>
       <f7-list-item link="/pcb/" title="PCB">
       </f7-list-item>
-      <f7-list-item link="/employeesMesseges/" title="(Komunikaty od pracowników)">
+      <f7-list-item link="/employeesMesseges/" title="Komunikaty od pracowników">
       </f7-list-item>
-    </f7-list>
-    <f7-list>
-      <f7-list-item link="/dynamic-route/blog/45/post/125/?foo=bar#about" title="Dynamic Route"></f7-list-item>
     </f7-list>
   </f7-page>
 </template>
