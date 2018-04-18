@@ -1,12 +1,12 @@
 import Login from "./pages/login.vue";
 import HomePage from './pages/home.vue';
 import Tact from './pages/tact.vue';
+import TactDetails from './pages/tactDetails.vue';
 import LineImage from './pages/lineImage.vue';
 import ReadingFromCamera from './pages/readingFromCamera.vue';
 import StationExclude from './pages/stationExclude.vue';
 import Pcb from './pages/pcb.vue';
 import EmployeesMesseges from './pages/employeesMesseges.vue';
-import DynamicRoutePage from './pages/dynamic-route.vue';
 
 export default [
   {
@@ -20,6 +20,10 @@ export default [
   {
     path: '/tact/',
     component: Tact
+  },
+  {
+    path: '/tact/:id',
+    component: TactDetails
   },
   {
     path: '/lineImage/',
@@ -40,9 +44,5 @@ export default [
   {
     path: '/employeesMesseges/',
     component: EmployeesMesseges
-  },
-  {
-    path: '/dynamic-route/blog/:blogId/post/:postId/',
-    component: DynamicRoutePage,
   }
 ];
