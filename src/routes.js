@@ -6,6 +6,7 @@ import LineImage from './pages/lineImage.vue';
 import ReadingFromCamera from './pages/readingFromCamera.vue';
 import StationExclude from './pages/stationExclude.vue';
 import Pcb from './pages/pcb.vue';
+import StationDetails from './pages/stationDetails.vue';
 import EmployeesMesseges from './pages/employeesMesseges.vue';
 
 export default [
@@ -40,6 +41,10 @@ export default [
   {
     path: '/pcb/',
     component: Pcb
+  },
+  {
+    path: '/station/:id',
+    component: StationDetails
   },
   {
     path: '/employeesMesseges/',

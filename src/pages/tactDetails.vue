@@ -52,9 +52,9 @@ export default {
   }
 };
 
-  function transformIdToPageTitle(id) {
-    const pageTitle = `${id.substring(0, 2)} ${id.substring(2)}`;
-    return pageTitle.toUpperCase();
+function transformIdToPageTitle(id) {
+  const pageTitle = `${id.substring(0, 2)} ${id.substring(2)}`;
+  return pageTitle.toUpperCase();
 }
 </script>
 <style>
@@ -79,4 +79,3 @@ export default {
   color: green;
 }
 </style>
-
