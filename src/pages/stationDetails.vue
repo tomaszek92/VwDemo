@@ -7,7 +7,7 @@
     <f7-card>
       <f7-card-header class="display-flex justify-content-center">Zawieszanie się wkrętarki (statystyka)</f7-card-header>
       <f7-card-content class="text-align-center">
-        <canvas id="myChart" width="400" height="400"></canvas>
+        <canvas id="stationDetailsChart" width="1000" height="1000"></canvas>
       </f7-card-content>
     </f7-card>
     <f7-label></f7-label>
@@ -29,7 +29,7 @@ export default {
     this.username = this.$f7.data.user;
     this.pageTitle = transformIdToPageTitle(this.$f7route.params['id']);
 
-    const ctx = document.getElementById("myChart").getContext('2d');
+    const ctx = document.getElementById('stationDetailsChart').getContext('2d');
     const myBarChart = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -58,14 +58,16 @@ export default {
           display: false
         },
         scales: {
-            yAxes: [{
+            yAxes: [
+              {
                 ticks: {
                     beginAtZero:true
                 }
-            }]
+            }
+            ]
         }
-    }
-  });
+      }
+    });
   }
 };
 
