@@ -17,11 +17,13 @@
   </f7-page>
 </template>
 <script>
+import grouppedStations from '../grouppedStations';
+
 export default {
   data() {
     return {
       username: '',
-      grouppedStations: []
+      grouppedStations: grouppedStations
     }
   },
   methods: {
@@ -31,33 +33,6 @@ export default {
   },
   mounted() {
     this.username = this.$f7.data.user;
-    let stations = [];
-    for (let i = 900; i < 1000; i = i + 10) {
-      stations.push({ name: `AF ${i}`, id: `af${i}` });
-    }
-    this.grouppedStations.push({
-       title: 'AF 900',
-       stations
-    });
-
-    stations = [];
-    for (let i = 1000; i <= 1100; i = i + 100) {
-      stations.push({ name: `AF ${i}`, id: `af${i}` });
-    }
-    this.grouppedStations.push({
-       title: 'AF 1000',
-       stations
-    });
   }
 }
 </script>
-<style>
-.contacts-list {
-  margin: 35px 0 !important;
-}
-.contacts-list .list-group-title {
-  padding: 10px 15px !important;
-  height: auto !important;
-}
-</style>
-

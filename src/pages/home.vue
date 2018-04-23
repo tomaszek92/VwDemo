@@ -43,6 +43,7 @@
       <f7-list-item link="/pcb/" title="PCB">
       </f7-list-item>
       <f7-list-item link="/employeesMesseges/" title="Komunikaty od pracowników">
+        <div slot="after"><f7-badge color="blue">2</f7-badge></div>
       </f7-list-item>
     </f7-list>
   </f7-page>

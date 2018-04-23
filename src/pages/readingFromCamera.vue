@@ -4,14 +4,26 @@
       <f7-nav-title>Odczyt z kamery</f7-nav-title>
       <f7-nav-right><span class="login">{{ username }}</span></f7-nav-right>
     </f7-navbar>
-    Oczyt z kamery
+    <f7-list contacts-list>
+      <template v-for="group in grouppedStations">
+        <f7-list-group v-bind:key="group.title">
+          <f7-list-item v-bind:title="group.title" group-title></f7-list-item>
+          <template v-for="station in group.stations">
+            <f7-list-item v-bind:title="station.name" v-bind:key="station.id"></f7-list-item>
+          </template>
+        </f7-list-group>
+      </template>
+    </f7-list>
   </f7-page>
 </template>
 <script>
+import grouppedStations from '../grouppedStations';
+
 export default {
   data() {
     return {
-      username: ''
+      username: '',
+      grouppedStations: grouppedStations
     }
   },
   mounted() {

@@ -31,7 +31,7 @@
       </f7-col>
     </f7-row>
     <f7-card>
-      <f7-card-header><span>ZP4 Montage Taktzeiten <small>(Aktueller Stand)</small></span></f7-card-header>
+      <f7-card-header class="display-flex justify-content-center"><span>ZP4 Montage Taktzeiten <small>(Aktueller Stand)</small></span></f7-card-header>
       <f7-card-content>
         <img src="static/images/tact_chart.PNG" style="width: 100%;"/>
       </f7-card-content>

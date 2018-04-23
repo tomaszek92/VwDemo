@@ -41,3 +41,12 @@ div.block.block-error .icon {
 .navbar .right .login {
   font-size: 0.75em;
 }
+
+.contacts-list {
+  margin: 10px 0 !important;
+}
+
+.contacts-list .list-group-title {
+  padding: 10px 15px !important;
+  height: auto !important;
+}
