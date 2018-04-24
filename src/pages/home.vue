@@ -1,5 +1,5 @@
 <template>
-  <f7-page>
+  <f7-page @page:beforein="beforein">
     <f7-navbar back-link="Logowanie">
       <f7-nav-title>ZP4</f7-nav-title>
       <f7-nav-right><span class="login">{{ username }}</span></f7-nav-right>
@@ -43,16 +43,27 @@
       <f7-list-item link="/pcb/" title="PCB">
       </f7-list-item>
       <f7-list-item link="/employeesMesseges/" title="Komunikaty od pracowników">
-        <div slot="after"><f7-badge color="blue">2</f7-badge></div>
+        <div v-if="employeesMesseges && employeesMesseges.length > 0" slot="after"><f7-badge color="blue">{{ employeesMesseges.length }}</f7-badge></div>
       </f7-list-item>
     </f7-list>
   </f7-page>
 </template>
 <script>
+import employeesMesseges from '../employeesMesseges';
+
 export default {
   data() {
     return {
-      username: ''
+      username: '',
+      employeesMesseges: []
+    }
+  },
+  methods: {
+    beforein() {
+      if (!this.$f7.data.employeesMesseges) {
+        this.$f7.data.employeesMesseges = employeesMesseges;
+      }
+      this.employeesMesseges = this.$f7.data.employeesMesseges;
     }
   },
   mounted() {
