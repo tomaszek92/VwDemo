@@ -70,19 +70,23 @@ export default {
         'Podaj nr personalny oraz hasło',
         'Logowanie do edycji planu produkcji',
         (username, password) => {
-          if (username === '123' && password === 'test') {
-            this.$f7Router.navigate("/productionPlanEditing/");
-          }
-          else {
-            this.$f7.notification
-              .create({
-                icon: '<i class="icon f7-icons color-red">lock</i>',
-                title: 'Błędny nr personalny lub hasło',
-                closeTimeout: 1000 * 5,
-                closeButton: true
-              })
-              .open();
-          }
+          const preloader = this.$f7.dialog.preloader('Logowanie');
+          setTimeout(() => {
+            preloader.close();
+            if (username === '123' && password === 'test') {
+              this.$f7Router.navigate("/productionPlanEditing/");
+            }
+            else {
+              this.$f7.notification
+                .create({
+                  icon: '<i class="icon f7-icons color-red">lock</i>',
+                  title: 'Błędny nr personalny lub hasło',
+                  closeTimeout: 1000 * 5,
+                  closeButton: true
+                })
+                .open();
+            }
+          }, 1000);
       });
     }
   },

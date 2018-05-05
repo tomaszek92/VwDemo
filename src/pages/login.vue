@@ -55,17 +55,22 @@ export default {
       this.loginCredentials.username = '';
       this.loginCredentials.password = '';
     },
-    login: function() {
-      if (
-        this.loginCredentials.username === "123" &&
-        this.loginCredentials.password === "test"
-      ) {
-        this.$f7.data.user = 'Jan Kowalski';
-        this.wrongCredentials = false;
-        this.$f7Router.navigate("/home/");
-      } else {
-        this.wrongCredentials = true;
-      }
+    login() {
+      const preloader = this.$f7.dialog.preloader('Logowanie');
+      setTimeout(() => {
+        preloader.close();
+        if (
+          this.loginCredentials.username === "123" &&
+          this.loginCredentials.password === "test"
+        ) {
+          this.$f7.data.user = 'Jan Kowalski';
+          this.wrongCredentials = false;
+          this.$f7Router.navigate("/home/");
+        }
+        else {
+          this.wrongCredentials = true;
+        }
+      }, 1000);
     }
   }
 };

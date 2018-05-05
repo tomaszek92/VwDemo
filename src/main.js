@@ -34,6 +34,12 @@ new Vue({
     theme: 'ios',
     // App routes
     routes: Routes,
+    dialog: {
+      usernamePlaceholder: 'Nr personalny',
+      passwordPlaceholder: 'Hasło',
+      buttonOk: 'Zaloguj',
+      buttonCancel: 'Anuluj'
+    }
   },
   // Register App Component
   components: {
