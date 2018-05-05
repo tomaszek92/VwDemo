@@ -50,3 +50,10 @@ div.block.block-error .icon {
   padding: 10px 15px !important;
   height: auto !important;
 }
+
+.notification > .notification-header > .notification-title {
+  text-transform: initial;
+  display: flex;
+  height: 20px;
+  align-items: center;
+}

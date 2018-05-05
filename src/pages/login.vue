@@ -27,7 +27,7 @@
       <f7-list v-show="wrongCredentials">
         <f7-list-item>
           <f7-block inset class="block-error text-center">
-            <p><f7-icon f7="close_round"></f7-icon> Błędny nr personalny lub hasło</p>
+            <p><f7-icon f7="lock"></f7-icon> Błędny nr personalny lub hasło</p>
           </f7-block>
         </f7-list-item>
       </f7-list>

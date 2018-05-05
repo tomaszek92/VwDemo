@@ -8,6 +8,7 @@ import StationExclude from './pages/stationExclude.vue';
 import Pcb from './pages/pcb.vue';
 import StationDetails from './pages/stationDetails.vue';
 import EmployeesMesseges from './pages/employeesMesseges.vue';
+import ProductionPlanEditing from './pages/productionPlanEditing.vue';
 
 export default [
   {
@@ -49,5 +50,9 @@ export default [
   {
     path: '/employeesMesseges/',
     component: EmployeesMesseges
+  },
+  {
+    path: '/productionPlanEditing/',
+    component: ProductionPlanEditing
   }
 ];

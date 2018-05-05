@@ -4,7 +4,7 @@
       <f7-nav-title>ZP4</f7-nav-title>
       <f7-nav-right><span class="login">{{ username }}</span></f7-nav-right>
     </f7-navbar>
-    <f7-card>
+    <f7-card @click.native="loginToProductionPlanEditing" id="production-plan">
       <f7-card-header class="display-flex justify-content-center">ZP 132</f7-card-header>
       <f7-card-content>
         <f7-row no-gap>
@@ -64,6 +64,26 @@ export default {
         this.$f7.data.employeesMesseges = employeesMesseges;
       }
       this.employeesMesseges = this.$f7.data.employeesMesseges;
+    },
+    loginToProductionPlanEditing() {
+      this.$f7.dialog.login(
+        'Podaj nr personalny oraz hasło',
+        'Logowanie do edycji planu produkcji',
+        (username, password) => {
+          if (username === '123' && password === 'test') {
+            this.$f7Router.navigate("/productionPlanEditing/");
+          }
+          else {
+            this.$f7.notification
+              .create({
+                icon: '<i class="icon f7-icons color-red">lock</i>',
+                title: 'Błędny nr personalny lub hasło',
+                closeTimeout: 1000 * 5,
+                closeButton: true
+              })
+              .open();
+          }
+      });
     }
   },
   mounted() {
